@@ -21,20 +21,28 @@ All paths above are folders except the The `path_preprocessed_data` item in `Fea
 
 ### 2. Preprocess
 Run `ISRUC_S3_preprocess.py`
+
 `python ISRUC_S3_preprocess.py`
+
 This program will preprocess the ISRUC-S3 dataset and save a file named 'ISRUC_S3.npz'.
 
 ### 3. Extract Features
 Run `train_FeatureNet.py`
+
 `python train_FeatureNet.py`
+
 This program will extract features and save features to 'path_feature'.
 
 ### 4. Train
 Run `train_JKSTGCN_model.py`
+
 `python train_JKSTGCN_model.py`
+
 This program will train models and save to 'path_output'.
 
 ### 5. Evaluate
 Run `evaluate_JK-STGCN_model.py`
+
 `python evaluate_JK-STGCN_model.p`
+
 This program will evaluate models and save to 'path_output'.
