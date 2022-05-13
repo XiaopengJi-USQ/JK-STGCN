@@ -1,0 +1,11 @@
+{
+  "GPU": "1",
+  "channels":10,
+  "fold": 10,
+  "epoch_f": 80,
+  "batch_size_f": 64,
+  "optimizer_f": "adam",
+  "learn_rate_f": 0.0002,
+  "path_preprocessed_data": "/ISRUC_S3/preprocessed/ISRUC_S3.npz",
+  "path_feature": "/ISRUC_S3/featurenet_output/"
+}

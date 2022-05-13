@@ -1,0 +1,14 @@
+{
+  "channels":10,
+  "fold": 10,
+  "context": 5,
+  "epoch": 80,
+  "batch_size": 64,
+  "optimizer": "adam",
+  "learn_rate": 0.0001,
+  "lr_decay": 0.0,
+  "lambda_GRL": 0.001,
+  "path_output": "/jkstgcn/result/",
+  "path_preprocessed_data": "/ISRUC_S3/preprocessed/ISRUC_S3.npz",
+  "path_feature": "/ISRUC_S3/featurenet_output/"
+}
