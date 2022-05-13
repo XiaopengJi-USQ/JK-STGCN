@@ -1,5 +1,7 @@
 # JK-STGCN
 
+This work is based on the [GraphSleepNet](https://github.com/ziyujia/GraphSleepNet) and [MSTGCN](https://github.com/ziyujia/MSTGCN) model.
+
 ## Dataset
 The ISRUC dataset can be downloaded on the official website: https://sleeptight.isr.uc.pt/?page_id=76
 
