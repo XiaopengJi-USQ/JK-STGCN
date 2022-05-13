@@ -19,7 +19,7 @@ Modify configuration files especially paths in each config files.
 - The `path_feature` item  in `Train.json` is the path of features.
 
 
-All paths above are folders except the The `path_preprocessed_data` item in `FeatureNet_Train.json` and `path_preprocessed_data` item in `Train.json`.
+All paths above are folders except the `path_preprocessed_data` item in `FeatureNet_Train.json` and the `path_preprocessed_data` item in `Train.json`.
 
 ### 2. Preprocess
 Run `ISRUC_S3_preprocess.py`
