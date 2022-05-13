@@ -17,6 +17,8 @@ Modify configuration files especially paths in each config files.
 - The `path_output` item in `Train.json` is the path to save models and results.
 - The `path_preprocessed_data` item in `Train.json` is the path of preprocessed data.
 - The `path_feature` item  in `Train.json` is the path of features.
+
+
 All paths above are folders except the The `path_preprocessed_data` item in `FeatureNet_Train.json` and `path_preprocessed_data` item in `Train.json`.
 
 ### 2. Preprocess
