@@ -1,6 +1,6 @@
 # JK-STGCN
 
-The JKSTGCN model is novel sleep stage classification model based on the [GraphSleepNet](https://github.com/ziyujia/GraphSleepNet) and [MSTGCN](https://github.com/ziyujia/MSTGCN) work.
+The JKSTGCN model is novel sleep stage classification model based on [GraphSleepNet](https://github.com/ziyujia/GraphSleepNet) and [MSTGCN](https://github.com/ziyujia/MSTGCN).
 
 ## Dataset
 The ISRUC dataset can be downloaded on the official website: https://sleeptight.isr.uc.pt/?page_id=76
