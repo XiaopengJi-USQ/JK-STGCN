@@ -22,7 +22,6 @@ def F_norm(weight_matrix, Falpha):
     '''
     compute F Norm
     '''
-    # 这里其实就是原论文的公式（2）中的alpha(A**2)
     return Falpha * K.sum(weight_matrix ** 2)
 
 def diff_loss(diff, S):
