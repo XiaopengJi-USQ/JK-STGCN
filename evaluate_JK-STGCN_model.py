@@ -72,31 +72,31 @@ for i in range(0,10):
     # get i th-fold feature and label
 
     Features = np.load(Path['feature'] + 'Feature_' + str(i) + '.npz', allow_pickle=True)
-    val_feature = Features['val_feature']
-    val_targets = Features['val_targets']
+    test_feature = Features['test_feature']
+    test_targets = Features['test_targets']
 
     ## using sliding window to add context
-    print('Feature', val_feature.shape)
-    val_feature, val_targets = AddContext_SingleSub(val_feature, val_targets, context)
+    print('Feature', test_feature.shape)
+    test_feature, test_targets = AddContext_SingleSub(test_feature, test_targets, context)
 
-    sample_shape = (val_feature.shape[1:])
-    print('Feature with context:', val_feature.shape)
+    sample_shape = (test_feature.shape[1:])
+    print('Feature with context:', test_feature.shape)
 
-    sample_shape = (val_feature.shape[1:])
+    sample_shape = (test_feature.shape[1:])
 
     model = build_JKSTGCN(cheb_k, num_of_chev_filters, num_of_time_filters, time_conv_strides, time_conv_kernel,
                           sample_shape, dense_size, opt, regularizer, dropout)
     # Evaluate
     # Load weights of best performance
     model.load_weights(Path['output'] + 'Best_model_' + str(i) + '.h5')
-    val_mse, val_acc = model.evaluate(val_feature, val_targets, verbose=0)
+    val_mse, val_acc = model.evaluate(test_feature, test_targets, verbose=0)
 
     # Predict
-    predicts = model.predict(val_feature)
+    predicts = model.predict(test_feature)
     print('Evaluate', val_acc)
     all_scores.append(val_acc)
     AllPred_temp = np.argmax(predicts, axis=1)
-    AllTrue_temp = np.argmax(val_targets, axis=1)
+    AllTrue_temp = np.argmax(test_targets, axis=1)
 
     if i == 0:
         AllPred = AllPred_temp
@@ -106,7 +106,7 @@ for i in range(0,10):
         AllTrue = np.concatenate((AllTrue, AllTrue_temp))
     # Fold finish
     print(128 * '_')
-    del model,  val_feature, val_targets
+    del model,  test_feature, test_targets
 # # 4. Final results
 
 
