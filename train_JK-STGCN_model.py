@@ -81,12 +81,14 @@ for i in range(0,10):
     train_targets = Features['train_targets']
     val_targets = Features['val_targets']
 
+
     ## Use the feature to train JKSTGCN
 
     print('Feature', train_feature.shape, val_feature.shape)
     train_feature, train_targets = AddContext_MultiSub(train_feature, train_targets,
                                                        np.delete(Fold_Num.copy(), i), context, i)
     val_feature, val_targets = AddContext_SingleSub(val_feature, val_targets, context)
+
 
     input_shape = (val_feature.shape[1:])
 
