@@ -83,7 +83,7 @@ for i in range(0,10):
     opt_f = utils.Instantiation_optim(optimizer_f, learn_rate_f) # optimizer of FeatureNet
     
     # get i th-fold data
-    train_data,train_targets,val_data,val_targets = DataGenerator.getFold(i)
+    train_data,train_targets,val_data,val_targets,test_data,test_targets = DataGenerator.getFold(i)
 
     ## build FeatureNet & train
     featureNet, featureNet_p = build_FeatureNet(opt_f, channels) # '_p' model is without the softmax layer
@@ -98,7 +98,7 @@ for i in range(0,10):
         validation_data = (val_data, val_targets),
         verbose = 2,
         callbacks=[keras.callbacks.ModelCheckpoint(output_path+'FeatureNet_Best_'+str(i)+'.h5',
-                                                   monitor='val_acc', 
+                                                   monitor='val_acc',
                                                    verbose=0, 
                                                    save_best_only=True, 
                                                    save_weights_only=False, 
@@ -122,12 +122,15 @@ for i in range(0,10):
     # get and save the learned feature
     train_feature = featureNet_p.predict(train_data)
     val_feature = featureNet_p.predict(val_data)
+    test_feature = featureNet_p.predict(test_data)
     print('Save feature of Fold #' + str(i) + ' to' + output_path+'Feature_'+str(i) + '.npz')
     np.savez(output_path+'Feature_'+str(i)+'.npz',
         train_feature = train_feature,
         val_feature = val_feature,
         train_targets = train_targets,
-        val_targets = val_targets
+        val_targets = val_targets,
+        test_feature = test_feature,
+        test_targets = test_targets
     )
     
     saveFile = open(output_path + "Result_FeatureNet.txt", 'a+')
