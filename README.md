@@ -1,3 +1,8 @@
+# Notice
+
+Four files were updated in our last update, and there won't be any new support in the future because the Keras version is too old for our new platform.
+All repositories under this account have been merged to https://github.com/xiaopengusq?tab=repositories, and will be updated in the future.
+
 # JK-STGCN
 
 Code of the paper 'Jumping Knowledge Based Spatial-temporal Graph Convolutional Networks for Automatic Sleep Stage Classification', which is based on [GraphSleepNet](https://github.com/ziyujia/GraphSleepNet) and [MSTGCN](https://github.com/ziyujia/MSTGCN).
